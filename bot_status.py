@@ -42,12 +42,14 @@ HEADERS={
 }
 
 def getAssetList():
-	print(int(time.time()))
+	pretty_time=time.strftime('%Y-%m-%d %H:%M', time.localtime())
+	print(pretty_time)
 	host = f"https://ubistatic-a.akamaihd.net/0081/stable/bundle_version_Android.txt?t={int(time.time())}"
 	result = None
 	try:
 		r = requests.get(host, headers=HEADERS)
-		result = r.text
+		if r.status_code == 200:
+			result = r.text
 	except:
 		print("ERROR: getAssetList")
 	time.sleep(1)
