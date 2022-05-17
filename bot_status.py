@@ -84,7 +84,7 @@ def findNewAssets(result):
 
 def execute():
 
-	postMessageToWebhook("I'm alive!")
+	#postMessageToWebhook("I'm alive!")
 	
 	RESULT = None
 	OFFLINE = False
@@ -107,7 +107,7 @@ def execute():
 			if NEW_ASSETS != None:
 				postMessageToWebhook(NEW_ASSETS)
 				
-		time.sleep(10 * 60) # Wait 10 minutes
+		time.sleep(1 * 60) # Wait 1 minutes
 
 if __name__ == '__main__':
 	#Run
